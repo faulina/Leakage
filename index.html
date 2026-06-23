@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>
+      // Gracefully prevent external extensions or cross-origin trackers from bloating telemetry with "Script error."
+      window.addEventListener('error', function (e) {
+        if (e.message === 'Script error.' || e.message === 'script error' || (!e.filename && e.lineno === 0)) {
+          console.warn('Silenced cross-origin extension or sandbox "Script error.":', e);
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          return true;
+        }
+      }, true);
+      
+      window.addEventListener('unhandledrejection', function (e) {
+        if (e.reason && (e.reason.message === 'Script error.' || e.reason.message === 'script error')) {
+          console.warn('Silenced cross-origin unhandled rejection:', e.reason);
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          return true;
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

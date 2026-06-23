@@ -1,0 +1,6 @@
+{
+  "name": "Progres Harian Status Kunjungan Prioritas 1",
+  "description": "Dashboard korporat untuk memantau progres harian kunjungan status Prioritas 1 dengan perhitungan delta otomatis dan ekspor impor Excel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
